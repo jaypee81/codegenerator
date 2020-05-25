@@ -1,0 +1,14 @@
+<mat-card cdkDrag (dblclick)="showProperties()" class="card-container">
+    <mat-card-header class="header">
+      <mat-card-title class="card-container-left">{{tablename}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="card-contend">
+      <mat-list>
+            <mat-list-item *ngFor="let field of fields">
+                {{field}}
+          </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>
+<template prop-host></template>
+

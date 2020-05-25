@@ -1,0 +1,22 @@
+.card-container {
+    /*  not needed styles to reflect it */ 
+    background:lightblue;
+    padding: 5px;
+    color: white;
+    color: black;
+    /* needed styles below */
+    // display: flex;
+    // justify-content: space-between;
+    width: 200px;
+    border-radius: 1em;
+  }
+  .header {
+      border: medium;
+      color: red;
+      border-bottom: 2;
+      width: 100%;
+      padding: 0px;
+  }
+  .card-container-left {
+    font-size: smaller;
+  }

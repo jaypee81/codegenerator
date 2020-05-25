@@ -1,0 +1,31 @@
+<mat-card class="card-container"> 
+  <mat-card-header class="header">
+    <mat-card-title class="card-container-left">Properties</mat-card-title>
+    
+      <mat-icon class="close" (click)="closeProperties()">close</mat-icon>
+  
+  </mat-card-header>
+<form class="example-form">
+  <div fxLayout="row">
+      <div>
+      <mat-form-field class="example-full-width">
+        <mat-label>Table</mat-label>
+        <input matInput placeholder="Table Name.." [(ngModel)]="tablename" (blur)="onChangeTablename()" name="tablename">
+      </mat-form-field>
+  </div>
+  <div style="position: relative;">
+    <div *ngIf="showControls" style="border: 1;right: 0; top: 0; position: absolute; margin-bottom: 10px;">
+      <mat-icon style="color:green; cursor: pointer;" (click)="addFields()">done</mat-icon>
+      <mat-icon style="color:red; cursor: pointer;" (click)="hideControls()" >cancel</mat-icon>  
+    </div>
+      <mat-list>
+        <mat-spinner *ngIf="dataloaded === false"></mat-spinner>
+          <div mat-subheader *ngIf="dataloaded === true">Fields</div>
+          <mat-list-item *ngFor="let record of tablerecords" (click)="onFieldSelect(record)">
+            <div class="matline">{{record.FIELDNAME}}</div>
+          </mat-list-item>
+        </mat-list>
+  </div>
+  </div>
+  </form>
+</mat-card> 
